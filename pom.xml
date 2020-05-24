@@ -7,6 +7,61 @@
     <groupId>dice-roll</groupId>
     <artifactId>DiceRoll</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <description>A dice rolling game with graphical user interface.</description>
 
+    <developers>
+        <developer>
+            <id>duszka-akos-attila</id>
+            <name>Duszka Ákos Attila</name>
+            <email>duszka.akos.attila@mailbox.unideb.hu</email>
+            <organization>Faculty of Informatics, University of Debrecen</organization>
+            <organizationUrl>https://www.inf.unideb.hu/</organizationUrl>
+        </developer>
+    </developers>
 
+    <scm>
+        <url>https://github.com/duszka-akos-attila/DiceRoll</url>
+        <connection>scm:git:git://github.com/duszka-akos-attila/DiceRoll.git</connection>
+        <developerConnection>scm:git:git@github.com:duszka-akos-attila/DiceRoll.git</developerConnection>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <exec.cleanupDaemonThreads>false</exec.cleanupDaemonThreads>
+        <dependency.locations.enabled>false</dependency.locations.enabled>
+        <mainClass>main.Main</mainClass>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>11</release>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
