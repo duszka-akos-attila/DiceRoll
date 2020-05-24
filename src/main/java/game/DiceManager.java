@@ -12,7 +12,7 @@ public class DiceManager {
 
         switch (direction){
             case("left"):
-                if(canRollLeft(game)) {
+                if(canRoll(game,direction)) {
                     position[1] -= 1;
                     onTop=pairOf(getLeft(dice));
                     onFront=dice.getOnFront();
@@ -23,7 +23,7 @@ public class DiceManager {
                 break;
 
             case("right"):
-                if(canRollRight(game)) {
+                if(canRoll(game,direction)) {
                     position[1] += 1;
                     onTop=getLeft(dice);
                     onFront=dice.getOnFront();
@@ -34,7 +34,7 @@ public class DiceManager {
                 break;
 
             case("up"):
-                if(canRollUp(game)) {
+                if(canRoll(game,direction)) {
                     position[0] -= 1;
                     onTop=dice.getOnFront();
                     onFront=pairOf(dice.getOnTop());
@@ -45,7 +45,7 @@ public class DiceManager {
                 break;
 
             case("down"):
-                if(canRollDown(game)) {
+                if(canRoll(game,direction)) {
                     position[0] += 1;
                     onTop=pairOf(dice.getOnFront());
                     onFront=dice.getOnTop();
