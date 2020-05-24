@@ -108,22 +108,6 @@ public class DiceManager {
         return false;
     }
 
-
-
-    public boolean canRollDown(Game game){
-        Dice dice = game.getDice();
-        Field field = game.getField();
-
-        if(dice.getPosition()[0]+1<6){
-            int[] targetPosition ={dice.getPosition()[0] + 1, dice.getPosition()[1]};
-            dice.setPosition(targetPosition);
-            int numberOnField= field.getFields()[targetPosition[0]][targetPosition[1]];
-
-            return dice.getOnTop() == numberOnField;
-        }
-        return false;
-    }
-
     public boolean canRollUp(Game game){
         Dice dice = game.getDice();
         Field field = game.getField();
