@@ -66,26 +66,6 @@ public class DiceManager {
         game.setDice(dice);
     }
 
-    public void rollLeft(Game game){
-        Dice dice = game.getDice();
-        if(canRollLeft(game)){
-            int[] position = new int[2];
-            position[0]=dice.getPosition()[0];
-            position[1]=dice.getPosition()[1] - 1;
-
-            int onTop=pairOf(getLeft(dice));
-
-            int onFront=dice.getOnFront();
-
-            dice.setPosition(position);
-            dice.setOnTop(onTop);
-            dice.setOnFront(onFront);
-
-            game.setDice(dice);
-        }
-
-    }
-
     public void rollRight(Game game){
         Dice dice = game.getDice();
         if(canRollLeft(game)){
