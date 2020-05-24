@@ -19,4 +19,8 @@ public class Game {
     public boolean didLost(Game game){
         return game.surrendered;
     }
+
+    public boolean isGameOver(Game game){
+        return didLost(game) || didWin(game);
+    }
 }
