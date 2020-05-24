@@ -13,6 +13,10 @@ public class Game {
     }
 
     public boolean didWin(Game game){
-        return dice.getPosition()[0] == 6 && dice.getPosition()[1] == 5;
+        return game.dice.getPosition()[0] == 6 && game.dice.getPosition()[1] == 5;
+    }
+
+    public boolean didLost(Game game){
+        return game.surrendered;
     }
 }
