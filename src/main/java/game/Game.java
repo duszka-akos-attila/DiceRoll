@@ -12,6 +12,10 @@ public class Game {
         this.surrendered = false;
     }
 
+    public void standardGame(){
+        this.field.loadStandardFields();
+    }
+
     public boolean didWin(Game game){
         return game.dice.getPosition()[0] == 6 && game.dice.getPosition()[1] == 5;
     }
