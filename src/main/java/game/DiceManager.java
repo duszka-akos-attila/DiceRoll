@@ -77,7 +77,9 @@ public class DiceManager {
                 if(game.getDice().getPosition()[1]-1>-1){
                     targetPosition[1] -= 1;
                     numberOnField = field.getFields()[targetPosition[0]][targetPosition[1]];
-                    return dice.getOnTop() == numberOnField;
+                    if(dice.getOnTop() == numberOnField || numberOnField == 0){
+                        return true;
+                    }
                 }
                 break;
 
@@ -85,7 +87,9 @@ public class DiceManager {
                 if(game.getDice().getPosition()[1]+1<5){
                     targetPosition[1] += 1;
                     numberOnField = field.getFields()[targetPosition[0]][targetPosition[1]];
-                    return dice.getOnTop() == numberOnField;
+                    if(dice.getOnTop() == numberOnField || numberOnField == 0){
+                        return true;
+                    }
                 }
                 break;
 
@@ -93,7 +97,9 @@ public class DiceManager {
                 if(dice.getPosition()[0]-1>-1){
                     targetPosition[0] -= 1;
                     numberOnField = field.getFields()[targetPosition[0]][targetPosition[1]];
-                    return dice.getOnTop() == numberOnField;
+                    if(dice.getOnTop() == numberOnField || numberOnField == 0){
+                        return true;
+                    }
                 }
                 break;
 
@@ -101,7 +107,9 @@ public class DiceManager {
                 if(dice.getPosition()[0]+1<6){
                     targetPosition[0] += 1;
                     numberOnField = field.getFields()[targetPosition[0]][targetPosition[1]];
-                    return dice.getOnTop() == numberOnField;
+                    if(dice.getOnTop() == numberOnField || numberOnField == 0){
+                        return true;
+                    }
                 }
                 break;
         }
