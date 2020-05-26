@@ -16,8 +16,6 @@ public class DiceManagerTest {
         testDice = testGame.getDice();
         assertEquals(controllDice,testDice);
 
-        //Test rolling dice to the right
-
         dm.rollDice(testGame, "right");
         testDice = testGame.getDice();
         controllDice.setPosition(new int[]{0,1});
