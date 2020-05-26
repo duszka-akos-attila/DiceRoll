@@ -93,4 +93,13 @@ public class Game {
     public boolean isGameOver(Game game){
         return didLost(game) || didWin(game);
     }
+
+    /**
+     * This method set surrendered value to true, to indicate that a
+     * player forfeited.
+     */
+
+    public void forfeit(){
+        this.surrendered = true;
+    }
 }
