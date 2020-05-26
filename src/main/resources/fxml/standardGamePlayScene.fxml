@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StandardGamePlayController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="moves" alignment="BOTTOM_LEFT" layoutX="50.0" prefWidth="140.0" text="0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="150.0" prefWidth="150.0" text="Moves:" textAlignment="RIGHT" GridPane.columnIndex="1" />
+            <ImageView fx:id="onTopImageView" fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+               <viewport>
+                  <Rectangle2D height="75.0" width="75.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fx:id="onFrontImageView" fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+               <viewport>
+                  <Rectangle2D height="75.0" width="75.0" />
+               </viewport>
+            </ImageView>
+         </children>
+      </GridPane>
+      <GridPane fx:id="playField" maxHeight="420.0" maxWidth="350.0" minHeight="420.0" minWidth="350.0" prefHeight="420.0" prefWidth="350.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="150.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="220.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="290.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="80.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="150.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="220.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="290.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="5">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+            <ImageView fitHeight="70.0" fitWidth="70.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="5">
+               <viewport>
+                  <Rectangle2D height="70.0" width="70.0" />
+               </viewport>
+            </ImageView>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="60.0" />
+         </GridPane.margin>
+      </GridPane>
+      <Button mnemonicParsing="false" onAction="#forfeit" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #D33;" text="Surrender" textFill="#eeeeee" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="30.0" />
+         </GridPane.margin></Button>
+   </children>
+</GridPane>

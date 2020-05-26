@@ -59,6 +59,19 @@ public class Field {
         this.fields=standardFields;
     }
 
+
+    /**
+     * A setter method for the Field objects, which fill a Field with fields of 6.
+     */
+
+    public void loadFieldsWithSix(){
+        for(int i=0;i<6;i++){
+            for(int j=0;j<5;j++) {
+                this.fields[i][j]=6;
+            }
+        }
+    }
+
     /**
      * Getter mehod for the play field.
      * @return the play field
