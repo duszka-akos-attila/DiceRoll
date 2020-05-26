@@ -16,6 +16,10 @@ public class Game {
         this.field.loadStandardFields();
     }
 
+    public void randomizedGame(){
+        this.field.randomizedFields();
+    }
+
     public boolean didWin(Game game){
         return game.dice.getPosition()[0] == 6 && game.dice.getPosition()[1] == 5;
     }
