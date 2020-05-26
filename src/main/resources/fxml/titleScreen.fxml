@@ -4,8 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<VBox maxHeight="300.0" maxWidth="250.0" minHeight="300.0" minWidth="250.0" prefHeight="300.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="300.0" maxWidth="250.0" minHeight="300.0" minWidth="250.0" prefHeight="300.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TitleScreenController">
    <children>
       <TextFlow maxHeight="75.0" maxWidth="250.0" minHeight="75.0" minWidth="250.0" prefHeight="75.0" prefWidth="250.0" style="-fx-background-color: gray;">
          <children>
@@ -21,7 +20,7 @@
             <Button layoutX="25.0" layoutY="10.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-border-color: #777; -fx-background-color: #CCC;" text="Standard Game" textAlignment="CENTER" />
             <Button layoutX="25.0" layoutY="65.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Randomized Game (Alpha)" />
             <Button layoutX="25.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Leaderboard" />
-            <Button alignment="CENTER" layoutX="25.0" layoutY="175.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Exit" />
+            <Button fx:id="buttonExit" alignment="CENTER" layoutX="25.0" layoutY="175.0" mnemonicParsing="false" onAction="#exitPressed" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Exit" />
          </children>
       </AnchorPane>
    </children>
