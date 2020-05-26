@@ -23,7 +23,7 @@ public class Field {
     public void randomizedFields(){
         for(int i=0;i<6;i++){
             for(int j=0;j<5;j++) {
-                this.fields[i][j]=(int)(Math.random()*6)+1;
+                this.fields[i][j]=(int)(Math.random()*6);
             }
         }
     }
