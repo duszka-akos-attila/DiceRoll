@@ -108,5 +108,16 @@ public class DiceManagerTest {
 
     @Test
     void getLeft() {
+        Dice testDice = new Dice();
+        DiceManager dm = new DiceManager();
+        testDice.setOnTop(6);
+        testDice.setOnFront(3);
+        assertEquals(5,dm.getLeft(testDice));
+        testDice.setOnFront(2);
+        assertEquals(3,dm.getLeft(testDice));
+
+        testDice.setOnTop(5);
+        testDice.setOnFront(6);
+        assertEquals(3,dm.getLeft(testDice));
     }
 }
