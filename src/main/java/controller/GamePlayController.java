@@ -1,11 +1,20 @@
 package controller;
 
 import game.Game;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.effect.Bloom;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class GamePlayController {
 
@@ -48,10 +57,16 @@ public class GamePlayController {
         }
 
         ImageView view = (ImageView) playField.getChildren().get(0);
-        view.getStyleClass().add("CubeIsHere");
     }
 
-    public void forfeit(){
+    public void forfeit(ActionEvent actionEvent) throws IOException {
         game.setSurrendered(true);
+        if(game.didLost()){
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/gameSurrendedScreen.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
     }
 }
