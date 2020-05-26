@@ -62,36 +62,33 @@ public class Game {
      * This method checks if a player wins
      * which happens, when the dice reached the
      * play field's bottom right corner.
-     * @param game the whole game state
      * @return true when the player won the game, false if the game is not won.
      */
 
-    public boolean didWin(Game game){
-        return game.dice.getPosition()[0] == 6 && game.dice.getPosition()[1] == 5;
+    public boolean didWin(){
+        return this.dice.getPosition()[0] == 6 && this.dice.getPosition()[1] == 5;
     }
 
     /**
      * This method checks if a player lost
      * which happens, when the surrended variable's
      * value is true.
-     * @param game the whole game state
      * @return true when the player lost the game, false if the game is not lost.
      */
 
-    public boolean didLost(Game game){
-        return game.surrendered;
+    public boolean didLost(){
+        return this.surrendered;
     }
 
     /**
      * This method checks if the game is over
      * which happens, when the {@link #didWin} method or
      * the {@link #didLost} method returns true.
-     * @param game the whole game state
      * @return true when the game is over, false if the game is not over.
      */
 
-    public boolean isGameOver(Game game){
-        return didLost(game) || didWin(game);
+    public boolean isGameOver(){
+        return didLost() || didWin();
     }
 
     /**
