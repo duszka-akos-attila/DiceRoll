@@ -66,7 +66,7 @@ public class Game {
      */
 
     public boolean didWin(){
-        return this.dice.getPosition()[0] == 6 && this.dice.getPosition()[1] == 5;
+        return this.dice.getPosition()[0] == 5 && this.dice.getPosition()[1] == 4;
     }
 
     /**
