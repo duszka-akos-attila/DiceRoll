@@ -123,11 +123,11 @@ public class DiceManager {
     public int maxRemaining(Dice dice){
         int biggerFromTopPair = getBiggerFromPair(dice.getOnTop());
         int biggerFromFrontPair = getBiggerFromPair(dice.getOnFront());
-        return 16-biggerFromFrontPair-biggerFromTopPair;
+        return 15-biggerFromFrontPair-biggerFromTopPair;
     }
 
     public int getBiggerFromPair(int n){
-        if(n<3){
+        if(n<4){
             return pairOf(n);
         }
         return n;
