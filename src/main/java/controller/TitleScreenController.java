@@ -19,11 +19,16 @@ public class TitleScreenController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/standardGamePlayScene.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene=(Scene) ((Node) actionEvent.getSource()).getScene();
-        scene.getStylesheets().add(getClass().getResource("CubeIsOnTop.css").toExternalForm());
         stage.setScene(new Scene(root));
         stage.show();
+    }
 
+    public void randomizeddGamePressed(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/randomizedGamePlayScene.fxml"));
+        Parent root = fxmlLoader.load();
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
 }
