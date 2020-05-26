@@ -15,6 +15,9 @@ public class GamePlayController {
     private Label moves;
 
     @FXML
+    private Label gamemodeTitle;
+
+    @FXML
     private GridPane playField;
 
     @FXML
@@ -26,7 +29,15 @@ public class GamePlayController {
     @FXML
     public void initialize(){
         game=new Game();
-        game.standardGame();
+        switch (gamemodeTitle.getText()){
+            case("Standard Game"):
+                game.standardGame();
+                break;
+
+            case("Randomized Game"):
+                game.randomizedGame();
+                break;
+        }
         onTopImageView.setImage(new Image(getClass().getResource("/pictures/"+ game.getDice().getOnTop()+".png").toExternalForm()));
         onFrontImageView.setImage(new Image(getClass().getResource("/pictures/"+ game.getDice().getOnFront()+".png").toExternalForm()));
         for(int i = 0; i < 6; i++){
