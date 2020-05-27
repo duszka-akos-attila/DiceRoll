@@ -23,7 +23,7 @@ public class ResultManager {
      * Object that represents game result.
      */
 
-    private Result result;
+    private static Result result;
 
     /**
      * Object for database communication.
@@ -36,14 +36,14 @@ public class ResultManager {
      * {@link Result}
      */
 
-    public void uploadResult(){
+    public static void  uploadResult(){
         result= DiceRollApplication.result;
         EntityManager em = emf.createEntityManager();
 
         try {
             logger.trace("Connecting to database...");
             em.getTransaction().begin();
-            em.persist(this.result);
+            em.persist(result);
             em.getTransaction().commit();
             logger.trace("Data successfully transfered to database!");
         } finally{
@@ -78,7 +78,7 @@ public class ResultManager {
      * Closes connection with the database.
      */
 
-    public void closeEMF(){
+    public static void closeEMF(){
         emf.close();
         logger.info("Connection to the database closed!");
     }
