@@ -6,8 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import result.Result;
 
 public class DiceRollApplication extends Application {
+
+    public static Result result;
 
     @Override
     public void start(Stage stage) throws Exception {
