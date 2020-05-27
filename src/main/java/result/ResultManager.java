@@ -7,4 +7,5 @@ package result;
  */
 
 public class ResultManager {
+
 }
