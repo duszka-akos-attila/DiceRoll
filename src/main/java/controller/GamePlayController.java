@@ -45,6 +45,7 @@ public class GamePlayController {
     @FXML
     public void initialize(){
         game = new Game();
+        DiceRollApplication.result = new Result();
         result = DiceRollApplication.result;
         switch (gamemodeTitle.getText()){
             case("Standard Game"):
