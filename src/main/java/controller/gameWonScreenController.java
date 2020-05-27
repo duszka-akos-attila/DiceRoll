@@ -11,6 +11,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import main.DiceRollApplication;
+import result.Result;
 
 import java.io.IOException;
 
@@ -25,12 +27,16 @@ public class gameWonScreenController {
     @FXML
     private GridPane controlGrid;
 
+    private final Result result = DiceRollApplication.result;
+
     public void submitResultByEnter(KeyEvent keyEvent) throws IOException{
         if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+            result.setName(playerNameTextField.getText());
             updateScreen();
         }
     }
     public void submitResult(ActionEvent actionEvent) throws IOException{
+        result.setName(playerNameTextField.getText());
         updateScreen();
     }
 
