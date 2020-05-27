@@ -9,7 +9,7 @@ public class DiceManager {
     /**
      * This method checks the game if the dice can roll to the
      * given direction and if it's can then calculate the state
-     * of the dice after rolling using: {@see canRoll}, {@see pairOf}, {@see getLeft}
+     * of the dice after rolling using: @see canRoll, @see pairOf, @see getLeft.
      * @param game A game type parameter is needed, because the canRoll method
      *             have to check both the Field object and the Dice object
      *             to decide whether the dice can roll or not.
@@ -81,7 +81,7 @@ public class DiceManager {
     }
 
     /**
-     * The canRoll method checks for the {@see rollDice} method if a dice can roll to a given direction.
+     * The canRoll method checks for the @see rollDice method if a dice can roll to a given direction.
      * @param game It's need both a field and a dice to calculate the move.
      * @param direction The direction where the player want to move.
      * @return with true if the player can move to the given direction and false if not.
@@ -140,7 +140,7 @@ public class DiceManager {
     /**
      * This method calculates the pair of the dice's given side.
      * @param n is the number on the dice which pair we want to find.
-     * @return the pair of the {@param n}.
+     * @return the pair of the @param n.
      */
 
     public int pairOf(int n){
