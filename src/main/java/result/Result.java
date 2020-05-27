@@ -31,4 +31,8 @@ public class Result {
 
     private String gameMode;
 
+    public void increaseMovesByOne(){
+        this.moves++;
+    }
+
 }
