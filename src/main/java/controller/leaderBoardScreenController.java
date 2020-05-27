@@ -70,6 +70,7 @@ public class leaderBoardScreenController {
 
     public void mainMenuPressed(ActionEvent actionEvent) throws IOException {
         logger.trace("The player pressed the Main menu button.");
+        logger.trace("Loading titleScreen scene!");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/titleScreen.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
