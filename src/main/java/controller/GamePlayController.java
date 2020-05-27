@@ -9,17 +9,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.effect.Bloom;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-import static javafx.scene.input.KeyCode.*;
 
 public class GamePlayController {
 
@@ -56,7 +53,7 @@ public class GamePlayController {
         updateScreen();
     }
 
-    public void rollDice(KeyEvent keyEvent){
+    public void rollDice(KeyEvent keyEvent) throws IOException {
         DiceManager dm = new DiceManager();
 
         switch (keyEvent.getCode()){
@@ -97,6 +94,10 @@ public class GamePlayController {
                 updateScreen();
                 break;
         }
+
+        if(game.didWin()){
+            switchToGameWonScreen(keyEvent);
+        }
     }
 
     public void forfeit(ActionEvent actionEvent) throws IOException {
@@ -108,6 +109,14 @@ public class GamePlayController {
             stage.setScene(new Scene(root));
             stage.show();
         }
+    }
+
+    public void switchToGameWonScreen(KeyEvent keyEvent) throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/gameWonScreen.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = (Stage) ((Node) keyEvent.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
     }
 
     public void updateScreen(){
