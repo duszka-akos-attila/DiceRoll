@@ -65,11 +65,17 @@ public class gameWonScreenController {
     public void updateScreen(){
         playerNameForm.setVisible(false);
         controlGrid.setVisible(true);
+        logger.trace("Screen is now updated!");
     }
 
     public void exitPressed(ActionEvent actionEvent){
         logger.trace("Program finished by user!");
-        ResultManager.closeEMF();
+        try {
+            ResultManager.closeEMF();
+        }
+        catch (Exception e){
+            logger.error(e.toString());
+        }
         System.exit(0);
     }
 
