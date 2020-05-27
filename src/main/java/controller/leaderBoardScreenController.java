@@ -13,14 +13,17 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import result.Result;
 import result.ResultManager;
 
 import java.util.List;
-import java.util.ArrayList;
 import java.io.IOException;
 
 public class leaderBoardScreenController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ResultManager.class);
 
     @FXML
     private ChoiceBox<String> gameModes;
@@ -43,6 +46,7 @@ public class leaderBoardScreenController {
         gameModes.getItems().add("Standard Game");
         gameModes.getItems().add("Randomized Game");
         gameModes.setValue("Choose a gamemode!");
+        logger.trace("Initialized Leaderboard screen.");
     }
 
 
@@ -53,11 +57,19 @@ public class leaderBoardScreenController {
     }
 
     public void exitPressed(ActionEvent actionEvent){
-        ResultManager.closeEMF();
+        try {
+            ResultManager.closeEMF();
+        }
+        catch (Exception e){
+            logger.error(e.toString());
+        }
+
+        logger.trace("The player pressed the Exit button.");
         System.exit(0);
     }
 
     public void mainMenuPressed(ActionEvent actionEvent) throws IOException {
+        logger.trace("The player pressed the Main menu button.");
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/titleScreen.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -66,7 +78,7 @@ public class leaderBoardScreenController {
     }
 
     public void updateTableView(String gamemode){
-//        logger.trace("Updating the leaderboard.");
+        logger.trace("Updating the leaderboard.");
         List<Result> topList = ResultManager.downloadResults(gamemode);
 
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -79,6 +91,7 @@ public class leaderBoardScreenController {
         leaderboardTable.setItems(observableResult);
 
         if(gameModes.getItems().toArray()[0].equals("Choose a gamemode!")) {
+            logger.trace("Standard value for the ChoiceBox is now deleted!");
             gameModes.getItems().remove(0);
         }
     }
