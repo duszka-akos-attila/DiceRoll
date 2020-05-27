@@ -48,10 +48,12 @@ public class GamePlayController {
         switch (gamemodeTitle.getText()){
             case("Standard Game"):
                 game.standardGame();
+                result.setGameMode("Standard Game");
                 break;
 
             case("Randomized Game"):
                 game.randomizedGame();
+                result.setGameMode("Randomized Game");
                 break;
         }
 
