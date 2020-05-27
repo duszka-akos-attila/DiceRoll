@@ -6,12 +6,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import result.ResultManager;
 
 import java.io.IOException;
 
 public class TitleScreenController {
 
     public void exitPressed(ActionEvent actionEvent){
+        ResultManager.closeEMF();
         System.exit(0);
     }
 
@@ -31,7 +33,7 @@ public class TitleScreenController {
         stage.show();
     }
 
-    public void leaderboardPressed(ActionEvent actionEvent) throws IOException{
+    public void leaderBoardPressed(ActionEvent actionEvent) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/leaderBoardScreen.fxml"));
         Parent root = fxmlLoader.load();
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
