@@ -19,7 +19,7 @@
          <children>
             <Button layoutX="25.0" layoutY="10.0" mnemonicParsing="false" onAction="#standardGamePressed" prefHeight="35.0" prefWidth="200.0" style="-fx-border-color: #777; -fx-background-color: #CCC;" text="Standard Game" textAlignment="CENTER" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="65.0" mnemonicParsing="false" onAction="#randomizeddGamePressed" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Randomized Game (Alpha)" textAlignment="CENTER" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="120.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Leaderboard" textAlignment="CENTER" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="120.0" mnemonicParsing="false" onAction="#leaderBoardPressed" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Leaderboard" textAlignment="CENTER" />
             <Button alignment="CENTER" layoutX="25.0" layoutY="175.0" mnemonicParsing="false" onAction="#exitPressed" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Exit" />
          </children>
       </AnchorPane>
