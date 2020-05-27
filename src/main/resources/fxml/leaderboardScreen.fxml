@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.leaderBoardScreenController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" percentHeight="25.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ChoiceBox fx:id="gameModes" onAction="#loadDatabase" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #CCC; -fx-border-color: #777; -fx-border-style: solid; -fx-border-width: 2px;" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </ChoiceBox>
+            <Label maxHeight="50.0" minWidth="50.0" prefHeight="50.0" text="Game mode:" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+       <TableView fx:id="leaderboardTable" editable="true" layoutX="50.0" layoutY="75.0" prefHeight="400.0" prefWidth="400.0" GridPane.rowIndex="1">
+           <columns>
+               <TableColumn fx:id="name" prefWidth="275.0" text="Name" />
+               <TableColumn fx:id="gamemode" prefWidth="225.0" text="Game mode" />
+               <TableColumn fx:id="movesNeeded" prefWidth="100.0" text="Rolls" />
+           </columns>
+       </TableView>
+       <GridPane fx:id="controlGrid" GridPane.rowIndex="2">
+           <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+           </columnConstraints>
+           <rowConstraints>
+               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+           </rowConstraints>
+           <children>
+               <Button mnemonicParsing="false" onAction="#mainMenuPressed" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Main menu" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               <Button layoutX="85.0" layoutY="52.0" mnemonicParsing="false" onAction="#exitPressed" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #CCC; -fx-border-color: #777;" text="Exit" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+           </children>
+       </GridPane>
+   </children>
+</GridPane>
