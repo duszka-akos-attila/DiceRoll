@@ -30,14 +30,16 @@ public class gameWonScreenController {
     private final Result result = DiceRollApplication.result;
 
     public void submitResultByEnter(KeyEvent keyEvent) throws IOException{
-        if (keyEvent.getCode().equals(KeyCode.ENTER)) {
+        if (keyEvent.getCode().equals(KeyCode.ENTER) && playerNameTextField.getText().length() > 2) {
             result.setName(playerNameTextField.getText());
             updateScreen();
         }
     }
     public void submitResult(ActionEvent actionEvent) throws IOException{
-        result.setName(playerNameTextField.getText());
-        updateScreen();
+        if(playerNameTextField.getText().length() > 2) {
+            result.setName(playerNameTextField.getText());
+            updateScreen();
+        }
     }
 
     public void updateScreen(){
