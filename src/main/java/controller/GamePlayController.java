@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import main.DiceRollApplication;
 import result.Result;
 
 import java.io.IOException;
@@ -43,8 +44,8 @@ public class GamePlayController {
 
     @FXML
     public void initialize(){
-        game=new Game();
-        result = new Result();
+        game = new Game();
+        result = DiceRollApplication.result;
         switch (gamemodeTitle.getText()){
             case("Standard Game"):
                 game.standardGame();
@@ -119,6 +120,7 @@ public class GamePlayController {
     }
 
     public void switchToGameWonScreen(KeyEvent keyEvent) throws IOException {
+            DiceRollApplication.result = this.result;
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/gameWonScreen.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) keyEvent.getSource()).getScene().getWindow();
@@ -141,5 +143,6 @@ public class GamePlayController {
         view.setImage(new Image(getClass().getResource("/pictures/b"+ game.getField().getFields()[game.getDice().getPosition()[0]][game.getDice().getPosition()[1]]+".png").toExternalForm()));
 
         moves.setText(valueOf(result.getMoves()));
+        DiceRollApplication.result = this.result;
     }
 }
