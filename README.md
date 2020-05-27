@@ -36,17 +36,17 @@
 
 ### Project timeline
 
->>2020.05.24
->>>Creating the Dice, Field, Game and DiceManager classes. These are responsible for handling the base game.
+>2020.05.24
+>>Creating the Dice, Field, Game and DiceManager classes. These are responsible for handling the base game.
 
->>2020.05.25
->>>Initialization for site generation, and unit testing.
+>2020.05.25
+>>Initialization for site generation, and unit testing.
 
->>2020.05.26
->>>Creating the Graphical User Interface with JavaFX, and their controller classes.
+>2020.05.26
+>>Creating the Graphical User Interface with JavaFX, and their controller classes.
 
->>2020.05.27
->>>Finishing game logic, graphics, controlls, documentation and logging.
+>2020.05.27
+>>Finishing game logic, graphics, controlls, documentation and logging.
 
 ## Developer information:
 
