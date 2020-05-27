@@ -14,13 +14,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import result.Result;
 
 import java.io.IOException;
+
+import static java.lang.String.valueOf;
 
 
 public class GamePlayController {
 
     Game game;
+    Result result;
 
     @FXML
     private Label moves;
@@ -40,6 +44,7 @@ public class GamePlayController {
     @FXML
     public void initialize(){
         game=new Game();
+        result = new Result();
         switch (gamemodeTitle.getText()){
             case("Standard Game"):
                 game.standardGame();
@@ -59,7 +64,7 @@ public class GamePlayController {
         switch (keyEvent.getCode()){
             case A:
                 if(dm.canRoll(game,"left")) {
-                    //Points will be increased here
+                    result.increaseMovesByOne();
                     dm.rollDice(game, "left");
                     updateScreen();
                 }
@@ -67,7 +72,7 @@ public class GamePlayController {
 
             case D:
                 if(dm.canRoll(game,"right")) {
-                    //Points will be increased here
+                    result.increaseMovesByOne();
                     dm.rollDice(game, "right");
                     updateScreen();
                 }
@@ -75,7 +80,7 @@ public class GamePlayController {
 
             case W:
                 if(dm.canRoll(game,"up")) {
-                    //Points will be increased here
+                    result.increaseMovesByOne();
                     dm.rollDice(game, "up");
                     updateScreen();
                 }
@@ -83,7 +88,7 @@ public class GamePlayController {
 
             case S:
                 if(dm.canRoll(game,"down")) {
-                    //Points will be increased here
+                    result.increaseMovesByOne();
                     dm.rollDice(game, "down");
                     updateScreen();
                 }
@@ -132,5 +137,7 @@ public class GamePlayController {
 
         ImageView view = (ImageView) playField.getChildren().get(game.getDice().getPosition()[0] * 5 + game.getDice().getPosition()[1]);
         view.setImage(new Image(getClass().getResource("/pictures/b"+ game.getField().getFields()[game.getDice().getPosition()[0]][game.getDice().getPosition()[1]]+".png").toExternalForm()));
+
+        moves.setText(valueOf(result.getMoves()));
     }
 }
