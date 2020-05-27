@@ -8,7 +8,17 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import result.Result;
 
+/**
+ * This class starts the Graphical User Interface, when called in the main.
+ */
+
 public class DiceRollApplication extends Application {
+
+    /**
+     * The result variable represents the game's result, which is initialized here,
+     * so it can be accessed from any GUI Scene.
+     * {@link Result}
+     */
 
     public static Result result;
 
