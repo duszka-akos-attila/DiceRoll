@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class gameSurrendedScreenController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ResultManager.class);
+    private static final Logger logger = LoggerFactory.getLogger(gameSurrendedScreenController.class);
 
     public void exitPressed(ActionEvent actionEvent){
         try {

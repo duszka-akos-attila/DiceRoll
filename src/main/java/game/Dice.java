@@ -1,11 +1,16 @@
 package game;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import result.ResultManager;
+
 /**
  * This class representing the Dice in the game.
  */
 
 @lombok.Data
 public class Dice {
+    private static final Logger logger = LoggerFactory.getLogger(Dice.class);
 
     /**
      * This variable contains the number on the top face of the dice.
@@ -36,5 +41,6 @@ public class Dice {
         this.onTop = 6;
         this.onFront = 4;
         this.position = new int[] {0,0};
+        logger.info("Dice was initilized!");
     }
 }

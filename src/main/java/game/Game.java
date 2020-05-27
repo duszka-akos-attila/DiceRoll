@@ -1,11 +1,16 @@
 package game;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  *  This class handle the game management.
  */
 
 @lombok.Data
 public class Game {
+
+    private static final Logger logger = LoggerFactory.getLogger(Game.class);
 
     /**
      *  Contains the dice state.
@@ -38,6 +43,7 @@ public class Game {
         this.dice = new Dice();
         this.field = new Field();
         this.surrendered = false;
+        logger.info("A new game was made!");
     }
 
     /**

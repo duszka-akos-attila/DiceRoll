@@ -1,10 +1,15 @@
 package game;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  *  This class handle the game's play field.
  */
 
 public class Field {
+
+    private static final Logger logger = LoggerFactory.getLogger(Field.class);
 
     /**
      *  Contains the play field.
@@ -37,6 +42,7 @@ public class Field {
                 fields[i][j]=0;
             }
         }
+        logger.trace("Field was declared with zeros.");
     }
 
     /**
@@ -49,6 +55,7 @@ public class Field {
                 this.fields[i][j]=(int)(Math.random()*6);
             }
         }
+        logger.info("Field was declared with RandomizedFields.");
     }
 
     /**
@@ -57,6 +64,7 @@ public class Field {
 
     public void loadStandardFields(){
         this.fields=standardFields;
+        logger.info("Field was declared with loadStandardFields.");
     }
 
 
@@ -70,6 +78,7 @@ public class Field {
                 this.fields[i][j]=6;
             }
         }
+        logger.trace("Field was declared with sixes.");
     }
 
     /**

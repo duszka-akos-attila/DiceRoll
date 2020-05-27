@@ -1,5 +1,9 @@
 package result;
 
+import game.DiceManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +17,8 @@ import javax.persistence.Id;
 @Entity
 @lombok.Data
 public class Result {
+
+    private static final Logger logger = LoggerFactory.getLogger(Result.class);
 
     /**
      * An automatically generated identifier by the database.
@@ -44,6 +50,7 @@ public class Result {
      */
 
     public void increaseMovesByOne(){
+        logger.info("Number of moves was increased by one.");
         this.moves++;
     }
 

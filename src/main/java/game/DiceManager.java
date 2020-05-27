@@ -1,10 +1,16 @@
 package game;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import result.ResultManager;
+
 /**
  * This class is responsible for the management of the Dice.
  */
 
 public class DiceManager {
+
+    private static final Logger logger = LoggerFactory.getLogger(DiceManager.class);
 
     /**
      * This method checks the game if the dice can roll to the
@@ -17,6 +23,7 @@ public class DiceManager {
      */
 
     public void rollDice(Game game, String direction){
+        logger.trace("Player tries to move Dice to the {}.", direction);
         Dice dice = game.getDice();
         int[] position = new int[2];
         position[0]=dice.getPosition()[0];
@@ -30,8 +37,10 @@ public class DiceManager {
                     position[1] -= 1;
                     onTop=pairOf(getLeft(dice));
                     onFront=dice.getOnFront();
+                    logger.info("Dice was successfully moved to the {}.",direction);
                 }
                 else{
+                    logger.info("Dice was not moved to the {}.",direction);
                     return;
                 }
                 break;
@@ -41,8 +50,10 @@ public class DiceManager {
                     position[1] += 1;
                     onTop=getLeft(dice);
                     onFront=dice.getOnFront();
+                    logger.info("Dice was successfully moved to the {}.",direction);
                 }
                 else{
+                    logger.info("Dice was not moved to the {}.",direction);
                     return;
                 }
                 break;
@@ -52,8 +63,10 @@ public class DiceManager {
                     position[0] -= 1;
                     onTop=dice.getOnFront();
                     onFront=pairOf(dice.getOnTop());
+                    logger.info("Dice was successfully moved to the {}.",direction);
                 }
                 else{
+                    logger.info("Dice was not moved to the {}.",direction);
                     return;
                 }
                 break;
@@ -63,8 +76,10 @@ public class DiceManager {
                     position[0] += 1;
                     onTop=pairOf(dice.getOnFront());
                     onFront=dice.getOnTop();
+                    logger.info("Dice was successfully moved to the {}.",direction);
                 }
                 else{
+                    logger.info("Dice was not moved to the {}.",direction);
                     return;
                 }
                 break;
@@ -144,6 +159,7 @@ public class DiceManager {
      */
 
     public int pairOf(int n){
+        logger.trace("pairOf method was called.");
         return 7-n;
     }
 
@@ -156,6 +172,7 @@ public class DiceManager {
     public int maxRemaining(Dice dice){
         int biggerFromTopPair = getBiggerFromPair(dice.getOnTop());
         int biggerFromFrontPair = getBiggerFromPair(dice.getOnFront());
+        logger.trace("maxRemaining method was called.");
         return 15-biggerFromFrontPair-biggerFromTopPair;
     }
 
@@ -166,6 +183,7 @@ public class DiceManager {
      */
 
     public int getBiggerFromPair(int n){
+        logger.trace("getBiggerFromPair was called.");
         if(n<4){
             return pairOf(n);
         }
@@ -179,6 +197,7 @@ public class DiceManager {
      */
 
     public int getLeft(Dice dice){
+        logger.trace("getLeft method was called.");
         int onTop = dice.getOnTop();
         int onFront = dice.getOnFront();
         int biggerRemaining = maxRemaining(dice);

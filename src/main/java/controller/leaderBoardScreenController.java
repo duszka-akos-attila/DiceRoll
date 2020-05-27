@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class leaderBoardScreenController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ResultManager.class);
+    private static final Logger logger = LoggerFactory.getLogger(leaderBoardScreenController.class);
 
     @FXML
     private ChoiceBox<String> gameModes;

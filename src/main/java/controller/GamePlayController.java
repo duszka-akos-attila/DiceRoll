@@ -27,7 +27,7 @@ import static java.lang.String.valueOf;
 
 public class GamePlayController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ResultManager.class);
+    private static final Logger logger = LoggerFactory.getLogger(GamePlayController.class);
 
     Game game;
     Result result;
