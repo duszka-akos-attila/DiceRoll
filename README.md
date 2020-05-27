@@ -1,8 +1,8 @@
-#Dice Rolling Game
+# Dice Rolling Game
 
 > A simple board game for A.I programmed in Java for Humans with GUI.
 
-##Developing enviroment:
+## Developing enviroment:
 
 > Operating System
 > >Linux Ubuntu 18.04.4
@@ -13,7 +13,7 @@
 > Project management tool
 >> Maven 3.6.0
 
-##Commands for:
+## Commands for:
 
 > Packaging
 >> mvn package
@@ -28,11 +28,11 @@
 >> java -jar /target/DiceRoll-1.0.jar
 
 
-**To be able to use the program, you have to configure a database for yourself in:
+**To be able to use the program, you have to configure a database for yourself in:**
 
 > "/src/resources/META-INF/persistence.xml"
 
-##Development informations:
+## Development informations:
 
 >Project timeline
 >>2020.05.24
@@ -44,13 +44,13 @@
 >>2020.05.27
 >>>Finishing game logic, graphics, controlls, documentation and logging.
 
-##Developer information:
+## Developer information:
 
 >Name
->>Attila Ákos Duszka
+>>>Attila Ákos Duszka
 >Github repositry
->>https://github.com/duszka-akos-attila/
+>>>https://github.com/duszka-akos-attila/
 >Website
->>https://shrek.unideb.hu/~duszka.akos.attila/
+>>>https://shrek.unideb.hu/~duszka.akos.attila/
 
 
