@@ -31,7 +31,7 @@ public class Result {
      * Number of moves what take the player to won the game.
      */
     @Column (nullable = false)
-    private int moves;
+    private long moves;
 
     /**
      * The game mode what the player won in.
