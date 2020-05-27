@@ -3,6 +3,7 @@ package result;
 /**
  * This class representing those games which was won by the player {@code name},
  * and the number of moves {@code moves} which was needed to win the game.
+ * @see game
  */
 @lombok.Data
 public class Result {
