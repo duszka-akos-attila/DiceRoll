@@ -1,5 +1,6 @@
 package controller;
 
+import game.DiceManager;
 import game.Game;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,10 +12,14 @@ import javafx.scene.control.Label;
 import javafx.scene.effect.Bloom;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static javafx.scene.input.KeyCode.*;
 
 public class GamePlayController {
 
@@ -49,6 +54,44 @@ public class GamePlayController {
         }
 
         updateScreen();
+    }
+
+    public void rollDice(KeyEvent keyEvent){
+        DiceManager dm = new DiceManager();
+
+        switch (keyEvent.getCode()){
+            case A:
+                if(dm.canRoll(game,"left")) {
+                    //Points will be increased here
+                    dm.rollDice(game, "left");
+                    updateScreen();
+                }
+                break;
+
+            case D:
+                if(dm.canRoll(game,"right")) {
+                    //Points will be increased here
+                    dm.rollDice(game, "right");
+                    updateScreen();
+                }
+                break;
+
+            case W:
+                if(dm.canRoll(game,"up")) {
+                    //Points will be increased here
+                    dm.rollDice(game, "up");
+                    updateScreen();
+                }
+                break;
+
+            case S:
+                if(dm.canRoll(game,"down")) {
+                    //Points will be increased here
+                    dm.rollDice(game, "down");
+                    updateScreen();
+                }
+                break;
+        }
     }
 
     public void forfeit(ActionEvent actionEvent) throws IOException {
