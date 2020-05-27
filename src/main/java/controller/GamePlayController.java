@@ -15,7 +15,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import main.DiceRollApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import result.Result;
+import result.ResultManager;
 
 import java.io.IOException;
 
@@ -23,6 +26,8 @@ import static java.lang.String.valueOf;
 
 
 public class GamePlayController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ResultManager.class);
 
     Game game;
     Result result;
@@ -51,11 +56,13 @@ public class GamePlayController {
             case("Standard Game"):
                 game.standardGame();
                 result.setGameMode("Standard Game");
+                logger.trace("Initialized a Standard game.");
                 break;
 
             case("Randomized Game"):
                 game.randomizedGame();
                 result.setGameMode("Randomized Game");
+                logger.trace("Initialized a Randomized game.");
                 break;
         }
 
@@ -64,6 +71,7 @@ public class GamePlayController {
 
     public void rollDice(KeyEvent keyEvent) throws IOException {
         DiceManager dm = new DiceManager();
+        logger.trace("Keyboard key pressed.");
 
         switch (keyEvent.getCode()){
             case A:
@@ -101,6 +109,7 @@ public class GamePlayController {
             case F6:
                 game.getDice().setPosition(new int[]{5,4});
                 updateScreen();
+                logger.info("CHEAT WAS ACTIVATED!");
                 break;
         }
 
@@ -111,7 +120,9 @@ public class GamePlayController {
 
     public void forfeit(ActionEvent actionEvent) throws IOException {
         game.setSurrendered(true);
+        logger.info("Player has forfeited!");
         if(game.didLost()){
+            logger.trace("Loading gameSurrendedScreen scene.");
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/gameSurrendedScreen.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -121,7 +132,10 @@ public class GamePlayController {
     }
 
     public void switchToGameWonScreen(KeyEvent keyEvent) throws IOException {
+            logger.info("Player has won!");
             DiceRollApplication.result = this.result;
+            logger.trace("Updating DiceRollApplication.result with final result.");
+            logger.trace("Loading gameWonScreen scene.");
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/gameWonScreen.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) keyEvent.getSource()).getScene().getWindow();
@@ -145,5 +159,7 @@ public class GamePlayController {
 
         moves.setText(valueOf(result.getMoves()));
         DiceRollApplication.result = this.result;
+        logger.trace("Updateing DiceRollApplication.result with current result.");
+        logger.trace("Screen is now updated!");
     }
 }
