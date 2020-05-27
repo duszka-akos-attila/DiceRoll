@@ -45,7 +45,6 @@ public class gameWonScreenController {
             catch (Exception e){
                 logger.error(e.toString());
             }
-            ResultManager.closeEMF();
             updateScreen();
         }
     }
@@ -59,7 +58,6 @@ public class gameWonScreenController {
             catch (Exception e){
                 logger.error(e.toString());
             }
-            ResultManager.closeEMF();
             updateScreen();
         }
     }
@@ -71,6 +69,7 @@ public class gameWonScreenController {
 
     public void exitPressed(ActionEvent actionEvent){
         logger.trace("Program finished by user!");
+        ResultManager.closeEMF();
         System.exit(0);
     }
 

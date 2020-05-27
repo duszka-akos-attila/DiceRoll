@@ -6,11 +6,13 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import result.ResultManager;
 
 import java.io.IOException;
 
 public class gameSurrendedScreenController {
     public void exitPressed(ActionEvent actionEvent){
+        ResultManager.closeEMF();
         System.exit(0);
     }
 
