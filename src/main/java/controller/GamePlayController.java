@@ -47,7 +47,7 @@ public class GamePlayController {
                 game.randomizedGame();
                 break;
         }
-        
+
         updateScreen();
     }
 
@@ -69,11 +69,11 @@ public class GamePlayController {
         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 5; j++){
                 ImageView view = (ImageView) playField.getChildren().get(i * 5 + j);
-                if(dicePosition == i * 5 + j){
-                    view.setImage(new Image(getClass().getResource("/pictures/b"+ game.getField().getFields()[i][j]+".png").toExternalForm()));
-                }
                 view.setImage(new Image(getClass().getResource("/pictures/"+ game.getField().getFields()[i][j]+".png").toExternalForm()));
             }
         }
+
+        ImageView view = (ImageView) playField.getChildren().get(game.getDice().getPosition()[0] * 5 + game.getDice().getPosition()[1]);
+        view.setImage(new Image(getClass().getResource("/pictures/b"+ game.getField().getFields()[game.getDice().getPosition()[0]][game.getDice().getPosition()[1]]+".png").toExternalForm()));
     }
 }
