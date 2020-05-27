@@ -32,6 +32,10 @@ public class Result {
 
     private String gameMode;
 
+    /**
+     * This method increases the class's moves named variable's value with one.
+     */
+
     public void increaseMovesByOne(){
         this.moves++;
     }
