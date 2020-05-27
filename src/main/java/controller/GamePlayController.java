@@ -91,6 +91,11 @@ public class GamePlayController {
                     updateScreen();
                 }
                 break;
+
+            case F6:
+                game.getDice().setPosition(new int[]{5,4});
+                updateScreen();
+                break;
         }
     }
 
